@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- deployment.yaml
+- service.yaml
+- route.yaml
+
+configMapGenerator:
+  - name: example
+    files:
+      - application.properties
+    literals:
+      - key1=value1
+      - key2=value2
+      - key3=value3
+      
